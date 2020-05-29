@@ -5,5 +5,5 @@ C:\Users\김태환\Desktop\MemoEngine\MemoEngine.Answers\obj\Debug\netstandard2.
 C:\Users\김태환\Desktop\MemoEngine\MemoEngine.Answers\obj\Debug\netstandard2.0\MemoEngine.Answers.AssemblyInfo.cs
 C:\Users\김태환\Desktop\MemoEngine\MemoEngine.Answers\obj\Debug\netstandard2.0\MemoEngine.Answers.dll
 C:\Users\김태환\Desktop\MemoEngine\MemoEngine.Answers\obj\Debug\netstandard2.0\MemoEngine.Answers.pdb
-C:\Users\김태환\Desktop\MemoEngine\MemoEngine.Answers\obj\Debug\netstandard2.0\MemoEngine.Answers.csprojAssemblyReference.cache
 C:\Users\김태환\Desktop\MemoEngine\MemoEngine.Answers\obj\Debug\netstandard2.0\MemoEngine.Answers.csproj.CoreCompileInputs.cache
+C:\Users\김태환\Desktop\MemoEngine\MemoEngine.Answers\obj\Debug\netstandard2.0\MemoEngine.Answers.csprojAssemblyReference.cache
