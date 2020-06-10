@@ -31,9 +31,14 @@ namespace Teaming
 
         public string name { get; set; }
 
+
+        public int good { get; set; }
+
+        public int bad { get; set; }
+
         private void DBConnect()
         {
-            string connectString = "server=(localdb)\\mssqllocaldb;database=teamingTest12;Integrated Security=True;";
+            string connectString = "server=(localdb)\\mssqllocaldb;database=teamingTest13;Integrated Security=True;";
             conn = new SqlConnection(connectString);
             if (conn == null)
                 MessageBox.Show("DB Error");
@@ -174,7 +179,7 @@ namespace Teaming
 
             int now = LView.SelectedIndices[0];
 
-            //MessageBox.Show(now.ToString());
+            // MessageBox.Show(now.ToString());
 
             string lIndex = LView.Items[now].SubItems[5].Text;
             // MessageBox.Show(LView.Items[now].SubItems[1].Text);
@@ -189,7 +194,14 @@ namespace Teaming
             string body = driver.FindElement(By.XPath("//*[@id=\"MainContent_lblContent\"]")).Text;
             string mail = driver.FindElement(By.XPath("/html/body/form/div[3]/main/div/div/div/div/div/div/table/tbody/tr[2]/td[4]/span/a")).Text;
 
-            Form1 newForm = new Form1(title, body, numberIndex, Email, password, name, phone, mail);
+         
+
+
+        
+
+        //
+
+        Form1 newForm = new Form1(title, body, numberIndex, Email, password, name, phone, mail, lIndex);
             newForm.ShowDialog();
         }
 
@@ -212,6 +224,7 @@ namespace Teaming
 
         private void button2_Click(object sender, EventArgs e)
         {
+            LView.Items.Clear();
             Tview.Nodes.Clear();
             driver.Navigate().GoToUrl("http://localhost:4978/Answers/AnswerIndex?BoardName=&Page=1");
             string sss;
@@ -295,6 +308,11 @@ namespace Teaming
         }
 
         private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LView_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

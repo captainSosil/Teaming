@@ -33,26 +33,26 @@
             this.MenuPanel = new System.Windows.Forms.Panel();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnSign = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.LView = new System.Windows.Forms.ListView();
             this.Tview = new System.Windows.Forms.TreeView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.UserID = new System.Windows.Forms.Label();
-            this.LView = new System.Windows.Forms.ListView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.메뉴ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.창닫기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button3 = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.MenuPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.MainPanel.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuPanel
@@ -89,6 +89,17 @@
             this.btnSign.UseVisualStyleBackColor = false;
             this.btnSign.Click += new System.EventHandler(this.BtnSign_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Image = global::Teaming.Properties.Resources.Teaming_logo;
+            this.pictureBox1.Location = new System.Drawing.Point(169, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(323, 193);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainPanel
             // 
             this.MainPanel.Controls.Add(this.LView);
@@ -101,6 +112,17 @@
             this.MainPanel.Size = new System.Drawing.Size(876, 584);
             this.MainPanel.TabIndex = 4;
             this.MainPanel.Visible = false;
+            // 
+            // LView
+            // 
+            this.LView.HideSelection = false;
+            this.LView.Location = new System.Drawing.Point(136, 110);
+            this.LView.Name = "LView";
+            this.LView.Size = new System.Drawing.Size(747, 502);
+            this.LView.TabIndex = 3;
+            this.LView.UseCompatibleStateImageBehavior = false;
+            this.LView.SelectedIndexChanged += new System.EventHandler(this.LView_SelectedIndexChanged);
+            this.LView.DoubleClick += new System.EventHandler(this.lvw_DoubleClick);
             // 
             // Tview
             // 
@@ -115,6 +137,12 @@
             this.Tview.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.trv_BeforeSelect);
             this.Tview.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.Tview_AfterSelect);
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "2.JPG");
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Lime;
@@ -127,6 +155,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(876, 82);
             this.panel1.TabIndex = 1;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button3.Location = new System.Drawing.Point(17, 12);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(118, 53);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "티밍 페이지";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -160,37 +199,6 @@
             this.UserID.TabIndex = 0;
             this.UserID.Text = "님 환영합니다.";
             // 
-            // LView
-            // 
-            this.LView.HideSelection = false;
-            this.LView.Location = new System.Drawing.Point(136, 110);
-            this.LView.Name = "LView";
-            this.LView.Size = new System.Drawing.Size(747, 502);
-            this.LView.TabIndex = 3;
-            this.LView.UseCompatibleStateImageBehavior = false;
-            this.LView.DoubleClick += new System.EventHandler(this.lvw_DoubleClick);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Image = global::Teaming.Properties.Resources.Teaming_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(169, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(323, 193);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "2.JPG");
-            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -213,20 +221,13 @@
             // 창닫기ToolStripMenuItem
             // 
             this.창닫기ToolStripMenuItem.Name = "창닫기ToolStripMenuItem";
-            this.창닫기ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.창닫기ToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
             this.창닫기ToolStripMenuItem.Text = "창 닫기";
             this.창닫기ToolStripMenuItem.Click += new System.EventHandler(this.창닫기ToolStripMenuItem_Click_1);
             // 
-            // button3
+            // bindingSource1
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button3.Location = new System.Drawing.Point(17, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(118, 53);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "티밍 페이지";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
             // 
             // MainWindow
             // 
@@ -242,14 +243,14 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainWindow_FormClosed);
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.MenuPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
