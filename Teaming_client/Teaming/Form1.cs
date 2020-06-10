@@ -64,8 +64,8 @@ namespace Teaming
             textBox1.Text = head;
             textBox2.Text = body;
 
-            
-                label2.Visible = false;
+
+            label2.Visible = false;
                 // pictureBox1.Visible = false;
             
         }

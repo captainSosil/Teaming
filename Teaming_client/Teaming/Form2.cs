@@ -110,7 +110,7 @@ namespace Teaming
         {
             // string tmp = listView1.FocusedItem.SubItems[1].Text;
 
-            System.Diagnostics.Process.Start("https://www.google.com/search?q=" + this.textBox1.Text);
+            System.Diagnostics.Process.Start("https://www.google.com/search?q=" + listView1.FocusedItem.SubItems[0].Text);
         }
 
         private void button2_Click_1(object sender, EventArgs e)

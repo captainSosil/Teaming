@@ -42,7 +42,14 @@ namespace Teaming
             conn = new SqlConnection(connectString);
             if (conn == null)
                 MessageBox.Show("DB Error");
-            conn.Open();
+
+            try
+            {
+                conn.Open();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         
         }
         private void DBClose()
@@ -70,7 +77,12 @@ namespace Teaming
             string query = "select * from userTBL where userId='" + Email + "' and password='" + password + "'";
             comm = new SqlCommand(query, conn);
             SqlDataReader rdr = comm.ExecuteReader();
-            if (rdr.Read())
+
+            if(Email==String.Empty || password == String.Empty)
+            {
+                MessageBox.Show("아이디 혹은 비밀번호를 입력하세요.");
+            }
+            else if (rdr.Read())
             {
                 
                 MenuPanel.Visible = false;
@@ -108,7 +120,11 @@ namespace Teaming
             comm = new SqlCommand(query, conn);
             SqlDataReader rdr=comm.ExecuteReader();
 
-            if(rdr.Read())
+            if (Email == String.Empty || password == String.Empty || name == String.Empty || phone == String.Empty)
+            {
+                MessageBox.Show("필수 field를 입력하세요.");
+            }
+            else if (rdr.Read())
             {
                 MessageBox.Show("ID 중복");
             }
@@ -262,11 +278,11 @@ namespace Teaming
         private void MainWindow_Load(object sender, EventArgs e)
         {
             LView.View = View.Details;
-            LView.Columns.Add("글 번호", "글 번호");
-            LView.Columns.Add("분류", "분류");
-            LView.Columns.Add("제목", "제목");
-            LView.Columns.Add("작성자", "작성자");
-            LView.Columns.Add("조회수", "조회수");
+            LView.Columns.Add("글 번호", "글 번호",60);
+            LView.Columns.Add("분류", "분류",70);
+            LView.Columns.Add("제목", "제목",300);
+            LView.Columns.Add("작성자", "작성자",100);
+            LView.Columns.Add("조회수", "조회수",50);
 
             options = new ChromeOptions();
             driverService = ChromeDriverService.CreateDefaultService();
