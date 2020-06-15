@@ -85,10 +85,9 @@ namespace Teaming
             else if (rdr.Read())
             {
                 
-                MenuPanel.Visible = false;
+                //MenuPanel.Visible = false;
                 MainPanel.Visible = true;
-
-                UserID.Text = Email + "님 환영합니다.";
+                UserID.Text = Email + "\n 님 환영합니다.";
 
                 // MessageBox.Show(rdr.GetString(3));
 
@@ -277,6 +276,8 @@ namespace Teaming
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            this.Width = 760;
+            this.Height = 690;
             LView.View = View.Details;
             LView.Columns.Add("글 번호", "글 번호",60);
             LView.Columns.Add("분류", "분류",70);
@@ -328,7 +329,127 @@ namespace Teaming
 
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://localhost:4978/Answers/AnswerIndex#");
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            LView.Items.Clear();
+            Tview.Nodes.Clear();
+            driver.Navigate().GoToUrl("http://localhost:4978/Answers/AnswerIndex?BoardName=&Page=1");
+            string sss;
+            int sub;
+
+            try
+            {
+                sss = driver.FindElement(By.XPath("/html/body/form/div[3]/main/div/div/div/div/div/div/table/tbody/tr[1]/td/div[1]")).Text;
+
+                sub = Int32.Parse(sss.Substring(14));
+                // MessageBox.Show(sub.ToString());
+
+                int tmpCnt = sub / 10 + 1;
+
+                nowIndex = tmpCnt;
+
+                TreeNode root;
+                int i;
+                for (i = 1; i <= tmpCnt; i++)
+                {
+                    root = Tview.Nodes.Add(i.ToString() + "번 페이지");
+                    root.ImageIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Form2 newForm2 = new Form2(driver);
+            newForm2.ShowDialog();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label1_MouseHover(object sender, EventArgs e)
+        {
+            label1.ForeColor = Color.BlanchedAlmond;
+        }
+
+        private void label1_MouseLeave(object sender, EventArgs e)
+        {
+            label1.ForeColor = Color.DimGray;
+        }
+
+        private void label2_MouseHover(object sender, EventArgs e)
+        {
+            label2.ForeColor = Color.BlanchedAlmond;
+        }
+
+        private void label2_MouseLeave(object sender, EventArgs e)
+        {
+            label2.ForeColor = Color.DimGray;
+        }
+
+        private void label3_MouseHover(object sender, EventArgs e)
+        {
+            label3.ForeColor = Color.BlanchedAlmond;
+        }
+
+        private void label3_MouseLeave(object sender, EventArgs e)
+        {
+            label3.ForeColor = Color.DimGray;
+        }
+
+        private void label4_MouseHover(object sender, EventArgs e)
+        {
+            label4.ForeColor = Color.BlanchedAlmond;
+        }
+
+        private void label4_MouseLeave(object sender, EventArgs e)
+        {
+            label4.ForeColor = Color.DimGray;
+        }
+
+        private void btnSign_MouseHover(object sender, EventArgs e)
+        {
+            this.btnSign.BackgroundImage = Teaming.Properties.Resources.button_on10;
+        }
+
+        private void btnRegister_MouseHover(object sender, EventArgs e)
+        {
+            this.btnRegister.BackgroundImage = Teaming.Properties.Resources.button_on10;
+        }
+
+        private void btnSign_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnSign.BackgroundImage = Teaming.Properties.Resources.button_off10;
+        }
+
+        private void btnRegister_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnRegister.BackgroundImage = Teaming.Properties.Resources.button_off10;
+        }
+
         private void LView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void UserID_Click(object sender, EventArgs e)
         {
 
         }

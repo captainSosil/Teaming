@@ -42,6 +42,8 @@ namespace Teaming
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            this.Height = 620;
+            this.Width = 1160;
             /*
             driver = new ChromeDriver();
 
@@ -67,7 +69,7 @@ namespace Teaming
             
             for (int BTNcounT = 1; BTNcounT < 3; BTNcounT++) //총 4페이지까지의 데이터를 수집합니다.
             {
-                Thread.Sleep(10);
+                Thread.Sleep(5);
 
                 IList<IWebElement> e1 = driver.FindElements(By.ClassName("r"));
                 IList<IWebElement> e2 = driver.FindElements(By.ClassName("s"));
@@ -110,7 +112,7 @@ namespace Teaming
         {
             // string tmp = listView1.FocusedItem.SubItems[1].Text;
 
-            System.Diagnostics.Process.Start("https://www.google.com/search?q=" + listView1.FocusedItem.SubItems[0].Text);
+            System.Diagnostics.Process.Start("https://www.google.com/search?q=" + this.textBox1.Text);
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -150,6 +152,26 @@ namespace Teaming
             newForm2.Show();
 
             this.Close();
+        }
+
+        private void button2_MouseHover(object sender, EventArgs e)
+        {
+            this.button2.BackColor = Color.RoyalBlue;
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            this.button2.BackColor = Color.Navy;
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            this.button1.BackgroundImage = Teaming.Properties.Resources.button_on10;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            this.button1.BackgroundImage = Teaming.Properties.Resources.button_off10;
         }
     }
 }

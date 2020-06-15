@@ -72,7 +72,8 @@ namespace Teaming
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            this.Width = 715;
+            this.Height = 674;
                 // pictureBox1.Image = imageList1.Images[0];
                 // pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
 
@@ -82,6 +83,7 @@ namespace Teaming
             SqlDataReader rdr = comm.ExecuteReader();
             if (rdr.Read())
             {
+                this.UserID.Text = rdr[1] + "님";
 
                 goodCnt = Int32.Parse(rdr[31].ToString());
                 badCnt = Int32.Parse(rdr[32].ToString());
@@ -301,6 +303,31 @@ namespace Teaming
                 good.Text = goodCnt.ToString();
                 tempLabel.Text = "* 추천을 하시려면 아이콘을 클릭해주세요!";
             }
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            this.button1.BackgroundImage = Teaming.Properties.Resources.button_on10;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            this.button1.BackgroundImage = Teaming.Properties.Resources.button_off10;
+        }
+
+        private void button3_MouseHover(object sender, EventArgs e)
+        {
+            this.button3.BackgroundImage = Teaming.Properties.Resources.button_on10;
+        }
+
+        private void button3_MouseLeave(object sender, EventArgs e)
+        {
+            this.button3.BackgroundImage = Teaming.Properties.Resources.button_off10;
+        }
+
+        private void UserID_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
