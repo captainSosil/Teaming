@@ -1,0 +1,9 @@
+C:\Users\김태환\Desktop\MemoEngine\MemoEngine.Database\bin\Debug\MemoEngine.Database.dacpac
+C:\Users\김태환\Desktop\MemoEngine\MemoEngine.Database\bin\Debug\MemoEngine.Database.dll
+C:\Users\김태환\Desktop\MemoEngine\MemoEngine.Database\bin\Debug\MemoEngine.Database.pdb
+C:\Users\김태환\Desktop\MemoEngine\MemoEngine.Database\obj\Debug\Model.xml
+C:\Users\김태환\Desktop\MemoEngine\MemoEngine.Database\obj\Debug\refactor.xml
+C:\Users\김태환\Desktop\MemoEngine\MemoEngine.Database\obj\Debug\postdeploy.sql
+C:\Users\김태환\Desktop\MemoEngine\MemoEngine.Database\obj\Debug\predeploy.sql
+C:\Users\김태환\Desktop\MemoEngine\MemoEngine.Database\obj\Debug\MemoEngine.Database.dll
+C:\Users\김태환\Desktop\MemoEngine\MemoEngine.Database\obj\Debug\MemoEngine.Database.pdb
