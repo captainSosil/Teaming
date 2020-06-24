@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ConnectionString-Web.config Connection String" description="ConnectionString 데이터베이스에 액세스하기 위해 애플리케이션에 의해 web.config에 사용된 연결 문자열입니다." defaultValue="server=(localdb)\mssqllocaldb;database=MemoEngine;Integrated Security=True;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\김태환\\Desktop\\Teaming_Web\\Teaming\\MemoEngine\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ConnectionString']/@connectionString" />
+  </parameter>
+</parameters>
